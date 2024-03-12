@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Bottle from '../Bottle/Bottle';
+import './Bottols.css'
 
 const Bottols = () => {
     const [bottles, setBottles] = useState([])
@@ -14,9 +15,11 @@ const Bottols = () => {
     return (
         <div>
             <h3>Hello Bottles {bottles.length}</h3>
+            <div className='bottoles-container'>
             {
                 bottles.map((item) => <Bottle key={item.id} bottle={item}></Bottle>)
             }
+            </div>
         </div>
     );
 };
