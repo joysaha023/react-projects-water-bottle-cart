@@ -9,7 +9,11 @@ const Bottols = () => {
         fetch('bottole.json')
         .then(res => res.json())
         .then(data => setBottles(data))
-    },[])
+    },[]);
+
+    const handleClickBottle = bottle => {
+        console.log(bottle)
+    }
 
 
     return (
@@ -17,7 +21,7 @@ const Bottols = () => {
             <h3>Hello Bottles {bottles.length}</h3>
             <div className='bottoles-container'>
             {
-                bottles.map((item) => <Bottle key={item.id} bottle={item}></Bottle>)
+                bottles.map((item) => <Bottle key={item.id} handleClickBottle={handleClickBottle}  bottle={item}></Bottle>)
             }
             </div>
         </div>
